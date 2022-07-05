@@ -36,6 +36,7 @@
 .text_container{
     font-size: 14px;
     line-height: 16.4px;
+    text-decoration: none;
 }
 
 .title{

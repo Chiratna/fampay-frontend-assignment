@@ -1,10 +1,13 @@
 .card_main{
     flex: 1;
+    height: 100%;
     margin: 24px 0px;
     display: flex;
     flex-direction: column;
     background: #F7F6F3;
     padding: 0px 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .card_wrapper{

@@ -38,6 +38,17 @@
     transform: translateX(0%);
     padding-left: 33px;
     display: flex;
+    transition: all 1s ease-in;
+}
+
+.foreground_slide{
+    position: absolute;
+    width: 100%;
+    border-radius: 12px;
+    transform: translateX(40%);
+    padding-left: 33px;
+    display: flex;
+    transition: all 1s ease-in;
 }
 
 .foreground_container{
@@ -54,6 +65,7 @@
     font-size: 30px;
     font-weight: 500;
     line-height: 36px;
+    text-decoration: none;
 }
 
 .h3_description{

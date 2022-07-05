@@ -55,6 +55,8 @@ export interface FormattedDescription {
 export interface Entity {
     text:  string;
     color: string;
+    url?: string;
+    font_style? : string;
 }
 
 export interface FormattedTitle {
