@@ -1,10 +1,25 @@
-.hc1_container{
-    width: 100%;
+.card_container{
     border-radius: 12px;
     padding: 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+ .hc9_config{
+    width: auto;
+    height: 100%;
+ }
+
+ .card_config{
+    width: 100%;
+    height: auto;
+ }
+
+.hc5_background{
+    border-radius: 12px;
 }
 
 .card_icon{
@@ -12,7 +27,8 @@
     height: auto;
     margin-right: 8px;
 }
-.hc1_text{
+
+.card_text{
     display: flex;
     flex: 1;
     flex-direction: column;

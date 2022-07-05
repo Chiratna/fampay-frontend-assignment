@@ -22,7 +22,7 @@ function App() {
   return (
     <div className='main'>
       <div className='fam_icon'>
-
+        Hello
       </div>
     {loading ? <p>Loading</p> : <CardContainer cardgroups={cards}/>}
     </div>
