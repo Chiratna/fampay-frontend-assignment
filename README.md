@@ -1,4 +1,3 @@
-# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -15,7 +14,7 @@ The page will reload if you make edits.\
 
 ## How to Change the API : 
 
-Go to -> src/constants/constants.ts and change the api URL to test with other .
+Go to -> src/constants/constants.ts and change the api URL to test with other apis.
 
 ## NPM Packages used in the Project
 i) [use-long-press](https://www.npmjs.com/package/axios)<br/>
