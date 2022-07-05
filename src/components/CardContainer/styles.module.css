@@ -1,0 +1,33 @@
+.main{
+    flex: 1;
+    margin: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    background: wheat;
+}
+
+.card_wrapper{
+    margin-bottom: 8px;
+    width: 100%;
+    background: gold;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.scroll_wrapper{
+    margin-bottom: 8px;
+    width: 100%;
+    background: gold;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+}
+
+.card{
+    background: red;
+    margin: 8px;
+    scroll-snap-align: center;
+}

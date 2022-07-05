@@ -1,0 +1,33 @@
+.scroll_wrapper{
+    margin-bottom: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+}
+
+.card{
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: flex;
+}
+
+.scroll_style{
+    flex-shrink : 0;
+    width: calc(100% - 16px);
+    margin: 8px;
+}
+
+.no_scroll_style{
+    flex: 1;
+    margin: 8px;
+}
+
+.HC6_wrapper{
+    flex-direction: row;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 24px;
+}
