@@ -4,6 +4,7 @@ import PullToRefresh from 'react-simple-pull-to-refresh';
 import { CardGroup, Cards, Convert } from './api/card-service';
 import './App.css';
 import CardContainer from './components/CardContainer';
+import { api } from './constants/constants';
 import fampayLogo from './images/fampaylogo.svg'
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const getData = async () =>{
     setLoading(true);
-    const res = await axios.get<Cards>("https://run.mocky.io/v3/4d8db890-5327-4c69-a3ef-b4f5f5225d17");
+    const res = await axios.get<Cards>(api);
     const resData : Array<CardGroup> = res.data.card_groups;
     setCards(resData);  
     setLoading(false);
