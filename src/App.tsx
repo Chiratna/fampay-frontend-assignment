@@ -1,5 +1,5 @@
 import { useSpring, animated } from '@react-spring/web'
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { CardGroup, Cards } from './api/card-service';
@@ -27,6 +27,7 @@ function App() {
    */
   const getData = async () => {
     setLoading(true);
+    try{
     const res = await axios.get<Cards>(url);
     const resData: Array<CardGroup> = res.data.card_groups;
     const filteredCard: Array<CardGroup> = [];
@@ -56,6 +57,11 @@ function App() {
 
     setCards(filteredCard);
     setLoading(false);
+    }catch(error : any){
+      alert(error.message);
+    }
+    
+    
   }
 
   useEffect(() => {
