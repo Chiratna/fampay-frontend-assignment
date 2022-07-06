@@ -86,7 +86,7 @@ function App() {
 
       let changeY = pStartY < pCurrentY ? Math.abs(pStartY - pCurrentY) : 0;
 
-      if (changeY <= 200 && inView) {
+      if (changeY>0 && changeY <= 200 && inView) {
         console.log("pulling to refresh", changeY);
         api.start({
           y: changeY > 150 ? 0 : changeY + 120
