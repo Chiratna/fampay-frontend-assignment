@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/fampay-frontend-assignment/static/css/main.384b620e.css",
-    "main.js": "/fampay-frontend-assignment/static/js/main.fda0d33d.js",
+    "main.js": "/fampay-frontend-assignment/static/js/main.e84f96be.js",
     "static/media/fampaylogo.svg": "/fampay-frontend-assignment/static/media/fampaylogo.825b197c854d5808729db25c97e36210.svg",
     "static/media/remind.svg": "/fampay-frontend-assignment/static/media/remind.794f932a26620d3cc3f3e27ec3288d83.svg",
     "static/media/dismiss.svg": "/fampay-frontend-assignment/static/media/dismiss.09954ce0d9b0de90f59ebf66c7fa7c63.svg",
     "index.html": "/fampay-frontend-assignment/index.html",
     "static/media/famchev.svg": "/fampay-frontend-assignment/static/media/famchev.e4c9cb622b9fed86ca85df2c145ac58d.svg",
     "main.384b620e.css.map": "/fampay-frontend-assignment/static/css/main.384b620e.css.map",
-    "main.fda0d33d.js.map": "/fampay-frontend-assignment/static/js/main.fda0d33d.js.map"
+    "main.e84f96be.js.map": "/fampay-frontend-assignment/static/js/main.e84f96be.js.map"
   },
   "entrypoints": [
     "static/css/main.384b620e.css",
-    "static/js/main.fda0d33d.js"
+    "static/js/main.e84f96be.js"
   ]
 }
