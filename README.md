@@ -12,6 +12,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 
+
+
 ## How to Change the API : 
 
 Go to -> src/constants/constants.ts and change the api URL to test with other apis.
@@ -23,4 +25,4 @@ iii) [react-spring](https://www.npmjs.com/package/react-spring)<br/>
 
 
 ## The Project Deployed Link
-You can see the deployed link by clicking [this]();
+You can see the deployed link by clicking [this](https://Chiratna.github.io/fampay-frontend-assignment);
