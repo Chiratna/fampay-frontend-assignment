@@ -19,7 +19,7 @@ Go to -> src/constants/constants.ts and change the api URL to test with other ap
 ## NPM Packages used in the Project
 i) [use-long-press](https://www.npmjs.com/package/axios)<br/>
 ii) [axios](https://www.npmjs.com/package/react-simple-pull-to-refresh)<br/>
-iii) [react-simple-pull-to-refresh](https://www.npmjs.com/package/use-long-press)<br/>
+iii) [react-spring](https://www.npmjs.com/package/react-spring)<br/>
 
 
 ## The Project Deployed Link

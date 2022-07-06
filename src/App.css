@@ -3,14 +3,24 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 .fam_icon{
   height: 60px;
   width: 100%;
+  padding-top: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+}
+
+.main_card_wrapper{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
 }
 
 .content_area{
@@ -19,7 +29,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: rebeccapurple; */
+  /* background: #F7F6F3; */
 }
 
 .lds-ring {

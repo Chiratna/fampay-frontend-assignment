@@ -2,8 +2,6 @@ import React from 'react'
 import { Card, Entity } from '../../api/card-service'
 import './styles.css'
 import chev from "../../images/famchev.svg"
-import remind from "../../images/remind.svg"
-import dismiss from "../../images/dismiss.svg"
 interface GeneralCardProps{
     card : Card
     cardType : string
@@ -25,7 +23,7 @@ const GeneralCard : React.FC<GeneralCardProps> = ({card, cardType} : GeneralCard
     window.location.replace(url);
   }
 
-  
+
   return (
     <div className = {cardClassName} style={cardStyle} onClick={()=>{
       handleOnClick(card.url)
@@ -36,7 +34,6 @@ const GeneralCard : React.FC<GeneralCardProps> = ({card, cardType} : GeneralCard
             {card.title && 
             <div className='title text_container'>
                 {card.formatted_title && card.formatted_title.text.split(" ").map((word, i)=>{
-                  let e : Entity;
                   if(word.includes("{}"))
                     {
                         let e : Entity = card.formatted_title?.entities[entityTitleIndex]!;
@@ -75,7 +72,7 @@ const GeneralCard : React.FC<GeneralCardProps> = ({card, cardType} : GeneralCard
             }
         </div>
         }
-        { cardType === "HC6" && <img src={chev}/>}
+        { cardType === "HC6" && <img src={chev} alt='chevron icon'/>}
     </div>
   )
 }

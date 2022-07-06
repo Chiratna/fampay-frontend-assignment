@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Card, Entity } from '../../api/card-service'
 import './styles.css'
 import remind from "../../images/remind.svg"
 import dismiss from "../../images/dismiss.svg"
-import { useLongPress } from 'use-long-press'
 interface HC3CardProps {
     card : Card,
     foreGroundClass : string
@@ -39,7 +38,7 @@ const HC3Card : React.FC<HC3CardProps> = ({card, foreGroundClass, handleRemindLa
                 {card.title &&
                     <div className='h3_title'>
                     {card.formatted_title && card.formatted_title.text.split(" ").map((word, i)=>{
-                      let e : Entity;
+
                       if(word.includes("{}"))
                         {
                             let e : Entity = card.formatted_title?.entities[entityTitleIndex]!;
