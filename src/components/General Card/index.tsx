@@ -20,7 +20,7 @@ const GeneralCard: React.FC<GeneralCardProps> = ({ card, cardType }: GeneralCard
   const cardClassName: string = `${cardType === "HC9" ? "hc9_config" : "card_config"} card_container`;
 
 
-  
+
   /**
    * @description - This decides the cardStyle dynamically
    */
@@ -55,14 +55,14 @@ const GeneralCard: React.FC<GeneralCardProps> = ({ card, cardType }: GeneralCard
                   let e: Entity = card.formatted_title?.entities[entityTitleIndex]!;
                   entityTitleIndex++;
                   if (e.url)
-                    return <a href={e.url} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</a>
+                    return <a key={i} href={e.url} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</a>
                   else
-                    return <span style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</span>
+                    return <span key={i} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</span>
                 }
-                return <span>{`${word} `}</span>
+                return <span key={i}>{`${word} `}</span>
               })}
-              {card.formatted_title === undefined && card.title.split(" ").map((word) => {
-                return <span>{`${word} `}</span>
+              {card.formatted_title === undefined && card.title.split(" ").map((word,j) => {
+                return <span key={j}>{`${word} `}</span>
               })
               }
             </div>}
@@ -74,14 +74,14 @@ const GeneralCard: React.FC<GeneralCardProps> = ({ card, cardType }: GeneralCard
                   let e: Entity = card.formatted_description?.entities[entityDescriptionIndex]!;
                   entityDescriptionIndex++;
                   if (e.url)
-                    return <a href={e.url} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</a>
+                    return <a key={i} href={e.url} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</a>
                   else
-                    return <span style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</span>
+                    return <span key={i} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</span>
                 }
-                return <span>{`${word} `}</span>
+                return <span key={i}>{`${word} `}</span>
               })}
-              {card.formatted_description === undefined && card.description.split(" ").map((word) => {
-                return <span>{`${word} `}</span>
+              {card.formatted_description === undefined && card.description.split(" ").map((word,j) => {
+                return <span key={j}>{`${word} `}</span>
               })
               }
             </div>

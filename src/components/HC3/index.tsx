@@ -50,15 +50,15 @@ const HC3Card: React.FC<HC3CardProps> = ({ card, foreGroundClass, handleRemindLa
                   let e: Entity = card.formatted_title?.entities[entityTitleIndex]!;
                   entityTitleIndex++;
                   if (e.url)
-                    return <a href={e.url} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</a>
+                    return <a key={i} href={e.url} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</a>
                   else
-                    return <span style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</span>
+                    return <span key={i} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</span>
 
                 }
-                return <span>{`${word} `}</span>
+                return <span key={i}>{`${word} `}</span>
               })}
-              {card.formatted_title === undefined && card.title.split(" ").map((word) => {
-                return <span>{`${word} `}</span>
+              {card.formatted_title === undefined && card.title.split(" ").map((word,j) => {
+                return <span key={j}>{`${word} `}</span>
               })
               }
             </div>
@@ -70,14 +70,14 @@ const HC3Card: React.FC<HC3CardProps> = ({ card, foreGroundClass, handleRemindLa
                   let e: Entity = card.formatted_description?.entities[entityDescriptionIndex]!;
                   entityDescriptionIndex++;
                   if (e.url)
-                    return <a href={e.url} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</a>
+                    return <a key={i} href={e.url} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</a>
                   else
-                    return <span style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</span>
+                    return <span key={i} style={{ color: `${e!.color}`, fontStyle: `${e!.font_style}` }}>{`${e.text} `}</span>
                 }
-                return <span>{`${word} `}</span>
+                return <span key={i}>{`${word} `}</span>
               })}
-              {card.formatted_description === undefined && card.description.split(" ").map((word) => {
-                return <span>{`${word} `}</span>
+              {card.formatted_description === undefined && card.description.split(" ").map((word,j) => {
+                return <span key={j}>{`${word} `}</span>
               })
               }
             </div>
@@ -85,8 +85,8 @@ const HC3Card: React.FC<HC3CardProps> = ({ card, foreGroundClass, handleRemindLa
 
           <div className='cta_btn_container'>
             {
-              card.cta && card.cta.map((cta) => {
-                return <button className='cta_btn' onClick={() => {
+              card.cta && card.cta.map((cta,i) => {
+                return <button key={i} className='cta_btn' onClick={() => {
                   handleOnClick(cta.url);
                 }} style={{ background: `${cta.bg_color}`, color: `${cta.text_color}` }}>{cta.text}</button>
               })

@@ -68,13 +68,13 @@ const CardContainer: React.FC<CardContainerProps> = ({ cardgroups}: CardContaine
 
   return (
     <div className="card_main">
-      {cardgroups.map((cardgroup) => {
-        return <div className="scroll_wrapper">
-          {cardgroup.cards.map((card) => {
+      {cardgroups.map((cardgroup, i) => {
+        return <div key={i} className="scroll_wrapper">
+          {cardgroup.cards.map((card,j) => {
             let cardId: string = `${card.name}${cardgroup.id}`
             if (remindLaterCards.includes(cardId) || allDissMissCard.includes(cardId))
               return;
-            return <div className={`${cardgroup.design_type === "HC9" ? "" : cardgroup.is_scrollable ? "scroll_style" : "no_scroll_style"} card_wrapper`} style={{ height: `${cardgroup.design_type === "HC9" && `${cardgroup.height}px`}` }}>
+            return <div key={j} className={`${cardgroup.design_type === "HC9" ? "" : cardgroup.is_scrollable ? "scroll_style" : "no_scroll_style"} card_wrapper`} style={{ height: `${cardgroup.design_type === "HC9" && `${cardgroup.height}px`}` }}>
               {cardgroup.design_type === "HC3" ? <div {...bind()}>
                 <HC3Card
                   handleDismiss={() => {
