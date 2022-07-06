@@ -1,6 +1,7 @@
 import { useSpring, animated } from '@react-spring/web'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { CardGroup, Cards } from './api/card-service';
 import './App.css';
 import CardContainer from './components/CardContainer';
@@ -11,6 +12,9 @@ function App() {
   const [cards, setCards] = useState<Array<CardGroup>>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
+  const { ref, inView, entry } = useInView({
+    threshold: 1,
+  });
   /**
    * @variables use to store users current and starting touch Y coordinates
    */
@@ -26,6 +30,7 @@ function App() {
     const res = await axios.get<Cards>(url);
     const resData: Array<CardGroup> = res.data.card_groups;
     const filteredCard: Array<CardGroup> = [];
+    
     resData.forEach((e) => {
       if (e.design_type === "HC3")
         filteredCard.push(e);
@@ -54,6 +59,8 @@ function App() {
   }
 
   useEffect(() => {
+    // console.log('is view', inView);
+    
     getData();
   },[])
 
@@ -79,13 +86,13 @@ function App() {
 
       let changeY = pStartY < pCurrentY ? Math.abs(pStartY - pCurrentY) : 0;
 
-      if (changeY <= 100) {
+      if (changeY <= 200) {
         console.log("pulling to refresh", changeY);
         api.start({
-          y: changeY > 50 ? 0 : changeY + 120
+          y: changeY > 150 ? 0 : changeY + 120
         })
       }
-      if (changeY > 100) {
+      if (changeY > 200 && inView) {
         console.log("pulled to refresh");
         getData();
       }
@@ -98,11 +105,12 @@ function App() {
   const swipeEnd = (e: any) => {
     
   };
-
+  console.log('log',inView);
+  
   return (
     <div className='main'>
       <div className='fam_icon'>
-        <img src={fampayLogo} alt='fampay logo' />
+        <img ref={ref} src={fampayLogo} alt='fampay logo' />
       </div>
       {loading ? <div className='content_area'>
         <div className='spinner_container'><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>
