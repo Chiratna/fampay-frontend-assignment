@@ -70,7 +70,7 @@ function App() {
    * The handler is attached to onTouchStart Synthetic Event of React and stores the initial touch position.
    */
   const swipeStart = (e: any) => {
-    if (!loading) {
+    if (!loading && inView) {
       let touch = e.targetTouches[0];
       pStartY = touch.screenY;
     }
