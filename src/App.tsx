@@ -79,14 +79,15 @@ function App() {
 
       let changeY = pStartY < pCurrentY ? Math.abs(pStartY - pCurrentY) : 0;
 
-      if (changeY <= 300) {
+      if (changeY <= 100) {
         console.log("pulling to refresh", changeY);
         api.start({
-          y: changeY > 250 ? 0 : changeY + 90
+          y: changeY > 50 ? 0 : changeY + 120
         })
       }
-      if (changeY > 300) {
+      if (changeY > 100) {
         console.log("pulled to refresh");
+        getData();
       }
     }
   }
@@ -95,7 +96,7 @@ function App() {
    * The handler is attached to onTouchEnd Synthetic Event of React and handles the pull to refresh
    */
   const swipeEnd = (e: any) => {
-    getData();
+    
   };
 
   return (
